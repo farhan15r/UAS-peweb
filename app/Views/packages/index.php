@@ -1,3 +1,10 @@
+<?php
+function rupiah($angka)
+{
+    $hasil = 'Rp ' . number_format($angka, 0, ",", ".");
+    return $hasil;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +24,17 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-50">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><strong>KETA TRAVEL</strong></a>
+            <a class="navbar-brand" href="/"><strong>KETA TRAVEL</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+                        <a class="nav-link" aria-current="page" href="/">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="package.html">TOUR PACKAGE</a>
+                        <a class="nav-link active" href="/packages">TOUR PACKAGE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">ABOUT US</a>
@@ -61,18 +68,19 @@
     <!-- container -->
     <div class="container">
         <div class="row">
+            <?php foreach ($packages as $package) : ?>
             <div class="col-md-6">
                 <div class="card m-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src="assets/flight.png" alt="sans" width="100%">
+                                <img src="assets/tour_packages/<?php echo $package['image'] ?>" alt="sans" width="100%">
                             </div>
                             <div class="col-md-6">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><h4>Flight Package</h4></li>
-                                    <li class="list-group-item">Paket penerbangan keliling dunia bersama Keta Travel</li>
-                                    <li class="list-group-item">Rp100.000.000</li>
+                                    <li class="list-group-item"><h4><?php echo $package['title'] ?></h4></li>
+                                    <li class="list-group-item"><?php echo $package['description'] ?></li>
+                                    <li class="list-group-item"><?php echo rupiah($package['price']) ?></li>
                                     <li class="list-group-item"><button type="button" class="btn btn-outline-primary">Read More</button></li>
                                 </ul>
                             </div>
@@ -80,63 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card m-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="assets/hotel.png" alt="sans" width="100%">
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><h4>Hotel & Resorts Package</h4></li>
-                                    <li class="list-group-item">Paket menginap terbaik untukmu dan keluarga</li>
-                                    <li class="list-group-item">Rp25.000.000</li>
-                                    <li class="list-group-item"><button type="button" class="btn btn-outline-primary">Read More</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card m-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="assets/cruises.png" alt="sans" width="100%">
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><h4>Cruises Package</h4></li>
-                                    <li class="list-group-item">Paket berlayar keliling dunia bersama Keta Travel</li>
-                                    <li class="list-group-item">Rp75.000.000</li>
-                                    <li class="list-group-item"><button type="button" class="btn btn-outline-primary">Read More</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card m-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="assets/tour.png" alt="sans" width="100%">
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><h4>Tours & Attractions Package</h4></li>
-                                    <li class="list-group-item">Paket liburan spesial bersama keluarga menikmati wisata dunia</li>
-                                    <li class="list-group-item">Rp50.000.000</li>
-                                    <li class="list-group-item"><button type="button" class="btn btn-outline-primary">Read More</button></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
     </div>
     <!-- end container -->

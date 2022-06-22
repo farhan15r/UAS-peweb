@@ -17,20 +17,20 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-50">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><strong>KETA TRAVEL</strong></a>
+                <a class="navbar-brand" href="/"><strong>KETA TRAVEL</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                            <a class="nav-link active" aria-current="page" href="/">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="package.html">TOUR PACKAGE</a>
+                            <a class="nav-link" href="/packages">TOUR PACKAGE</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">ABOUT US</a>
+                            <a class="nav-link" href="/aboutl">ABOUT US</a>
                         </li>
                     </ul>
                     <button class="btn btn-outline-light me-1">SIGN IN</button>
@@ -67,10 +67,11 @@
         <div class="container">
             <div class="row pt-2">
                 <!-- looping for packages list -->
+                <?php $temp = 0 ?>
                 <?php foreach ($packages as $package) : ?>
                 <div class="col-md-4">
                     <div class="card text-center">
-                        <img src="assets/tour_packages/<?php echo $package['image'] ?>.jpg" class="card-img-top" alt="...">
+                        <img src="assets/tour_packages/<?php echo $package['image'] ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $package['title'] ?></h5>
                             <p class="card-text"><?php echo $package['description'] ?></p>
@@ -80,6 +81,11 @@
                         </div>
                     </div>
                 </div>
+                <?php //stop lopping when 3
+                if (++$temp > 2) {
+                    break;
+                }
+                ?>
                 <?php endforeach ?>
             </div>
         </div>
