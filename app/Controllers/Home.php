@@ -2,10 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Models\PackageModel;
+
 class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $PackageModel = new PackageModel();
+        $packages = $PackageModel->findAll();
+
+        $data = [
+            'packages' => $packages
+        ];
+
+        return view('index', $data);
     }
 }
