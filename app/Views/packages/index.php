@@ -37,7 +37,7 @@ function rupiah($angka)
                         <a class="nav-link active" href="/packages">TOUR PACKAGE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">ABOUT US</a>
+                        <a class="nav-link" href="/about">ABOUT US</a>
                     </li>
                 </ul>
                 <button class="btn btn-outline-light me-1">SIGN IN</button>
