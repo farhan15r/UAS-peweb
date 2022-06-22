@@ -11,6 +11,8 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
         <title>KETA TRAVEL | ABOUT US</title>
     </head>
     <body>
@@ -72,23 +74,23 @@
             <h2 class="text-center">Team Developer</h2>
             <div class="row justify-content-center">
                 <?php foreach ($developers as $developer) : ?>
-                <div class="col-sm-6 my-2">
+                <div class="col-xl-6 my-2">
                     <div class="card shadow p-2 my-3 bg-body rounded">
                         <div class="row card-body p-0">
                             <div class="col-sm-4">
                                 <img class="rounded-circle m-1" src="assets/developers/<?php echo $developer['image'] ?>" alt="sans" width="100%"/>
                             </div>
                             <div class="col-sm-6">
-                                <h2 class="card-title"><?php echo $developer['name'] ?></h2>
+                                <h2 class="card-title h3"><?php echo $developer['name'] ?></h2>
                                 <h6 class="card-text"><?php echo $developer['position'] ?></h6>
                                 <hr style="width:50%;text-align:left;margin-left:0">
                                 <h6><?php echo $developer['nim'] ?></h6>
                                 <br>
                                 <ul class="list-group list-group-horizontal">
-                                    <li class="list-group-item border-0"><a href=""><img src="assets/icons-facebook.png" width="30px"/></a></li>
-                                    <li class="list-group-item border-0"><a href=""><img src="assets/icon-twitter.png" width="33px"/></a></li>
-                                    <li class="list-group-item border-0"><a href=""><img src="assets/icon-instagram.png" width="30px"/></a></li>
-                                    <li class="list-group-item border-0"><a href=""><img src="assets/icon-linkedin.png" width="30px"/></a></li>
+                                    <li class="list-group-item border-0"><a class="btn btn-secondary" href=""><i class="bi bi-whatsapp secondary"></i></a></li>
+                                    <li class="list-group-item border-0"><a class="btn btn-secondary" href=""><i class="bi bi-twitter"></i></a></li>
+                                    <li class="list-group-item border-0"><a class="btn btn-secondary" href=""><i class="bi bi-instagram"></i></a></li>
+                                    <li class="list-group-item border-0"><a class="btn btn-secondary" href=""><i class="bi bi-linkedin"></i></i></a></li>
                                 </ul>
                             </div>
                         </div>

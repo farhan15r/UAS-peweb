@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PackageModel;
+use App\Models\UserModel;
 
 class Home extends BaseController
 {
@@ -11,8 +12,12 @@ class Home extends BaseController
         $PackageModel = new PackageModel();
         $packages = $PackageModel->findAll();
 
+        $UserModel = new UserModel();
+        $users = $UserModel->asArray()->where('isinfluence', '1')->findAll();
+
         $data = [
-            'packages' => $packages
+            'packages' => $packages,
+            'users' => $users,
         ];
 
         return view('index', $data);

@@ -105,72 +105,19 @@
         </div>
         <div class="container">
             <div class="row">
+                <?php foreach ($users as $user) : ?>
                 <div class="col-sm-4 my-2">
                     <div class="card">
                         <div class="row card-body">
-                            <img class="col-sm-3" src="assets/yotari.jpg" alt="sans" width="10px"/>
+                            <img class="col-sm-3" src="assets/users/<?php echo $user['image'] ?>" alt="sans" width="10px"/>
                             <div class="col-sm-6">
-                                <h5 class="card-title">Yotari Kezia</h5>
-                                <h7 class="card-text">Musisi / Penyanyi</h7>
+                                <h5 class="card-title"><?php echo $user['name'] ?></h5>
+                                <h7 class="card-text"><?php echo $user['status'] ?></h7>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 my-2">
-                    <div class="card">
-                        <div class="row card-body">
-                            <img class="col-sm-3" src="assets/kayes.jpg" alt="sans" width="10px"/>
-                            <div class="col-sm-6">
-                                <h5 class="card-title">Kayess</h5>
-                                <h7 class="card-text">Gamer / Streamer</h7>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 my-2">
-                    <div class="card">
-                        <div class="row card-body">
-                            <img class="col-sm-3" src="assets/brando.jpg" alt="sans" width="10px"/>
-                            <div class="col-sm-6">
-                                <h5 class="card-title">Brando</h5>
-                                <h7 class="card-text">Youtuber / Gamer</h7>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 my-2">
-                    <div class="card">
-                        <div class="row card-body">
-                            <img class="col-sm-3" src="assets/Alicia.jpg" alt="sans" width="10px"/>
-                            <div class="col-sm-6">
-                                <h5 class="card-title">Alicia</h5>
-                                <h7 class="card-text">Streamer</h7>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 my-2">
-                    <div class="card">
-                        <div class="row card-body">
-                            <img class="col-sm-3" src="assets/bayu.jpg" alt="sans" width="10px"/>
-                            <div class="col-sm-6">
-                                <h5 class="card-title">Bayu SKAK</h5>
-                                <h7 class="card-text">Aktor</h7>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 my-2">
-                    <div class="card">
-                        <div class="row card-body">
-                            <img class="col-sm-3" src="assets/ewing.jpg" alt="sans" width="10px"/>
-                            <div class="col-sm-6">
-                                <h5 class="card-title">Ewing</h5>
-                                <h7 class="card-text">Content Creator</h7>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
         <!-- end Testimoni -->
