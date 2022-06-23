@@ -1,3 +1,10 @@
+<?php
+function rupiah($angka)
+{
+    $hasil = 'Rp ' . number_format($angka, 0, ",", ".");
+    return $hasil;
+}
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -94,13 +101,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/packages">
+                        <a class="nav-link active" href="/admin/packages">
                         <span data-feather="shopping-cart" class="align-text-bottom"></span>
                         Packages
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/customers">
+                        <a class="nav-link" href="/admin/customers">
                         <span data-feather="users" class="align-text-bottom"></span>
                         Customers
                         </a>
@@ -159,29 +166,27 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Phone Number</th>
+                                <th scope="col">Packages Name</th>
+                                <th scope="col">Price</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i = 1 ?>
-                            <?php foreach ($users as $user) : ?>
+                            <?php foreach ($packages as $package) : ?>
                             <tr>
                                 <th scope="row"><?php echo $i++ ?></th>
-                                <td><?php echo $user['name'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
+                                <td><?php echo $package['title'] ?></td>
+                                <td><?php echo rupiah($package['price']) ?></td>
                                 <td>
-                                    <a href="/admin/customers/<?php echo $user['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="/admin/customers/delete/<?php echo $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="/admin/packages/<?php echo $package['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="/admin/customers/delete/" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
                     </table>
-                    <a href="/admin/customers/add" class="btn btn-success">Add New Customers</a>
+                    <a href="/admin/packages/add" class="btn btn-success">Add New Customers</a>
                 </main>
             </div>
         </div>

@@ -73,7 +73,6 @@
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
         </header>
 
         <div class="container-fluid">
@@ -94,13 +93,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/packages">
+                        <a class="nav-link active" href="/admin/packages">
                         <span data-feather="shopping-cart" class="align-text-bottom"></span>
                         Packages
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/customers">
+                        <a class="nav-link" href="/admin/customers">
                         <span data-feather="users" class="align-text-bottom"></span>
                         Customers
                         </a>
@@ -155,33 +154,25 @@
                 </nav>
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <table class="table" width="200px">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1 ?>
-                            <?php foreach ($users as $user) : ?>
-                            <tr>
-                                <th scope="row"><?php echo $i++ ?></th>
-                                <td><?php echo $user['name'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
-                                <td>
-                                    <a href="/admin/customers/<?php echo $user['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="/admin/customers/delete/<?php echo $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            <?php endforeach ?>
-                        </tbody>
-                    </table>
-                    <a href="/admin/customers/add" class="btn btn-success">Add New Customers</a>
+                    <div class="col-md-6 p-3">
+                        <form method="POST" action="/admin/packages/add">
+                        <?= csrf_field(); ?>
+                            <div class="mb-3">
+                                <label class="form-label">Title</label>
+                                <input name="title" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description</label>
+                                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Price</label>
+                                <input name="price" type="text" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="/admin/packages" class="btn btn-outline-primary">Cancel</a>
+                        </form>
+                    </div>
                 </main>
             </div>
         </div>

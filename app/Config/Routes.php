@@ -39,12 +39,18 @@ $routes->get('/', 'Home::index');
 $routes->get('/packages', 'Package::index');
 $routes->get('/about', 'About::index');
 $routes->get('/admin', 'Admin::index');
+
 $routes->get('/admin/customers', 'Admin::customers');
 $routes->get('/admin/customers/add', 'Admin::addCustomer');
 $routes->Post('/admin/customers/add', 'Admin::storeCustomer');
 $routes->get('/admin/customers/(:num)', 'Admin::customer/$1');
 $routes->post('/admin/customers/(:num)', 'Admin::update/$1');
 $routes->get('/admin/customers/delete/(:num)', 'Admin::deleteCustomer/$1');
+
+$routes->get('/admin/packages', 'Package::packages');
+$routes->get('/admin/packages/add', 'Package::add');
+$routes->post('/admin/packages/add', 'Package::store');
+$routes->get('/admin/packages/(:num)', 'Package::package/$1');
 
 /*
  * --------------------------------------------------------------------

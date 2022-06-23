@@ -109,7 +109,7 @@
                 <div class="col-sm-4 my-2">
                     <div class="card">
                         <div class="row card-body">
-                            <img class="col-sm-3" src="assets/users/<?php echo $user['image'] ?>" alt="sans" width="10px"/>
+                            <img class="col-sm-3" src="assets/users/<?php echo $user['image'] ?>" alt="" width="10px"/>
                             <div class="col-sm-6">
                                 <h5 class="card-title"><?php echo $user['name'] ?></h5>
                                 <h7 class="card-text"><?php echo $user['job'] ?></h7>
