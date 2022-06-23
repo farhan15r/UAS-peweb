@@ -47,7 +47,7 @@ class Package extends BaseController
         return redirect()->to('/admin/packages');
     }
 
-    public function customer($id)
+    public function package($id)
     {
         $PackageModel = new PackageModel();
         $package = $PackageModel->where('id', $id)->first();
@@ -57,5 +57,26 @@ class Package extends BaseController
         ];
 
         return (view('/admin/package', $data));
+    }
+
+    public function update($id)
+    {
+        $PackageModel = new PackageModel();
+        $PackageModel->save([
+            'id' => $id,
+            'title' => $this->request->getVar('title'),
+            'description' => $this->request->getVar('description'),
+            'price' => (int)$this->request->getVar('price'),
+        ]);
+
+        return redirect()->to('/admin/packages');
+    }
+
+    public function delete($id)
+    {
+        $PackageModel = new PackageModel();
+        $PackageModel->delete($id);
+        
+        return redirect()->to('/admin/packages');
     }
 }

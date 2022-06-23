@@ -51,6 +51,8 @@ $routes->get('/admin/packages', 'Package::packages');
 $routes->get('/admin/packages/add', 'Package::add');
 $routes->post('/admin/packages/add', 'Package::store');
 $routes->get('/admin/packages/(:num)', 'Package::package/$1');
+$routes->post('/admin/packages/(:num)', 'Package::update/$1');
+$routes->get('/admin/packages/delete/(:num)', 'Package::delete/$1');
 
 /*
  * --------------------------------------------------------------------
