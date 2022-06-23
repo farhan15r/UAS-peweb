@@ -69,4 +69,12 @@ class Admin extends BaseController
 
         return redirect()->to('/admin/customers');
     }
+    
+    public function deleteCustomer($id)
+    {
+        $UserModel = new UserModel();
+        $UserModel->delete($id);
+        
+        return redirect()->to('/admin/customers');
+    }
 }

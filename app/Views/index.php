@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="text-center py-4">
-            <a class="btn btn-primary text-center" style="margin:auto" href="/packages/"><h3>Browse All Tour Package</h3></a>
+            <a class="btn btn-primary text-center" style="margin:auto" href="/packages"><h3>Browse All Tour Package</h3></a>
         </div>
         <!-- end Paket Unggulan -->
 
@@ -112,7 +112,7 @@
                             <img class="col-sm-3" src="assets/users/<?php echo $user['image'] ?>" alt="sans" width="10px"/>
                             <div class="col-sm-6">
                                 <h5 class="card-title"><?php echo $user['name'] ?></h5>
-                                <h7 class="card-text"><?php echo $user['status'] ?></h7>
+                                <h7 class="card-text"><?php echo $user['job'] ?></h7>
                             </div>
                         </div>
                     </div>

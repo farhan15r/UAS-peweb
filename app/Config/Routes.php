@@ -44,6 +44,7 @@ $routes->get('/admin/customers/add', 'Admin::addCustomer');
 $routes->Post('/admin/customers/add', 'Admin::storeCustomer');
 $routes->get('/admin/customers/(:num)', 'Admin::customer/$1');
 $routes->post('/admin/customers/(:num)', 'Admin::update/$1');
+$routes->get('/admin/customers/delete/(:num)', 'Admin::deleteCustomer/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -13,7 +13,7 @@ class Home extends BaseController
         $packages = $PackageModel->findAll();
 
         $UserModel = new UserModel();
-        $users = $UserModel->asArray()->where('isinfluence', '1')->findAll();
+        $users = $UserModel->asArray()->where('isinfluencer', '1')->findAll();
 
         $data = [
             'packages' => $packages,
