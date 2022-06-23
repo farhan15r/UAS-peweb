@@ -40,8 +40,10 @@ $routes->get('/packages', 'Package::index');
 $routes->get('/about', 'About::index');
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/customers', 'Admin::customers');
-$routes->get('/admin/customers/(:any)', 'Admin::customer/$1');
-$routes->post('/admin/customers/(:any)', 'Admin::update/$1');
+$routes->get('/admin/customers/add', 'Admin::addCustomer');
+$routes->Post('/admin/customers/add', 'Admin::storeCustomer');
+$routes->get('/admin/customers/(:num)', 'Admin::customer/$1');
+$routes->post('/admin/customers/(:num)', 'Admin::update/$1');
 
 /*
  * --------------------------------------------------------------------

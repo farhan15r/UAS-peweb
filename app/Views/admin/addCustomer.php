@@ -160,33 +160,36 @@
                 </nav>
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <table class="table" width="200px">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1 ?>
-                            <?php foreach ($users as $user) : ?>
-                            <tr>
-                                <th scope="row"><?php echo $i++ ?></th>
-                                <td><?php echo $user['name'] ?></td>
-                                <td><?php echo $user['username'] ?></td>
-                                <td><?php echo $user['phone'] ?></td>
-                                <td>
-                                    <a href="/admin/customers/<?php echo $user['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="/admin/customers/<?php echo $user['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            <?php endforeach ?>
-                        </tbody>
-                    </table>
-                    <a href="/admin/customers/add" class="btn btn-success">Add New Customers</a>
+                    <div class="col-md-6 p-3">
+                        <form method="POST" action="/admin/customers/add">
+                        <?= csrf_field(); ?>
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input name="name" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">UserName</label>
+                                <input name="username" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input name="phone" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Job</label>
+                                <input name="job" type="text" class="form-control">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="isinfluencer" type="checkbox" id="flexCheckChecked" value="1">
+                                <label class="form-check-label">
+                                    Influencer
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a href="/admin/customers" class="btn btn-outline-primary">Cancel</a>
+                        </form>
+                    </div>
                 </main>
             </div>
         </div>
