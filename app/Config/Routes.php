@@ -38,6 +38,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/packages', 'Package::index');
 $routes->get('/about', 'About::index');
+$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/customers', 'Admin::customers');
+$routes->get('/admin/customers/(:any)', 'Admin::customer/$1');
+$routes->post('/admin/customers/(:any)', 'Admin::update/$1');
 
 /*
  * --------------------------------------------------------------------
