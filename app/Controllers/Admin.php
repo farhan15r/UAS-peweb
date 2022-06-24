@@ -3,13 +3,25 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\SellRecordModel;
 use CodeIgniter\View\ViewDecoratorInterface;
 
 class Admin extends BaseController
 {
     public function index()
     {
-        return view('admin/index');
+        $SellRecordModel = new SellRecordModel();
+        $SellRecordModel->orderBy('id', 'desc');
+        $SellRecordModel->limit(12);
+
+        $records = $SellRecordModel->asArray()->find();
+        $records = array_reverse($records);
+
+        $data = [
+            'records' => $records,
+        ];
+
+        return view('admin/index', $data);
     }
     
     public function customers()
