@@ -54,6 +54,8 @@ $routes->get('/admin/packages/(:num)', 'Package::package/$1');
 $routes->post('/admin/packages/(:num)', 'Package::update/$1');
 $routes->get('/admin/packages/delete/(:num)', 'Package::delete/$1');
 
+$routes->get('/admin/export', 'Export::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

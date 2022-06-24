@@ -107,7 +107,7 @@
                         <h1 class="h2">Dashboard</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group me-2">
-                                <a class="btn btn-sm btn-outline-secondary">Export</a>
+                                <a href="/admin/export" class="btn btn-sm btn-outline-secondary">Export PDF</a>
                             </div>
                         </div>
                     </div>
