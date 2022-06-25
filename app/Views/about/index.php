@@ -78,7 +78,7 @@
                     <div class="card shadow p-2 my-3 bg-body rounded">
                         <div class="row card-body p-0">
                             <div class="col-sm-4">
-                                <img class="rounded-circle m-1" src="assets/developers/<?php echo $developer['image'] ?>" alt="sans" width="100%"/>
+                                <img class="rounded-circle m-1 img img-fluid" src="assets/developers/<?php echo $developer['image'] ?>" alt="sans" width="100%"/>
                             </div>
                             <div class="col-sm-6">
                                 <h2 class="card-title h3"><?php echo $developer['name'] ?></h2>
